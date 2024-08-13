@@ -13,10 +13,6 @@ while True:
     success, img = cap.read()
     img = detector.findHands(img)
     img = cv2.flip(img,1)
-    # cTime = time.time()
-    # fps = 1/(cTime-pTime)
-    # pTime = cTime
-    # cv2.putText(img,str(int(fps)),(30,200),cv2.FONT_HERSHEY_COMPLEX,1,(0,0,255),3)
     lmlist = detector.findPosition(img,allHands=True,draw = False)
     
     tipID = [4,8,12,16,20]
